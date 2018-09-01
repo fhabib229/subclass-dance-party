@@ -40,18 +40,26 @@ then create 2 methods :
   step
 */
 
-var Dancer = function (top, left, timeBetweenSteps) {
+var makeDancer = function (top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"></span>');
-  // this.step();
+  this.position = 0;
+  this.step();
+  this.setPosition(top, left);
+  console.log(this.position);
 };
 
-Dancer.prototype.step = function () {
-  setTimeout(this.step, timeBetweenSteps);
- };
+makeDancer.prototype.constructor = makeDancer;
 
-Dancer.step();
+makeDancer.prototype.step = function () {
+  // return setTimeout(Dancer.step, timeBetweenSteps);
+  this.position++;
+};
 
-Dancer.prototype.setPosition = function (top, left) {
+// step();
+//Dancer.call(step);
+// console.log(Dancer);
+
+makeDancer.prototype.setPosition = function (top, left) {
   var styleSettings = {
     top: top,
     left: left
@@ -59,4 +67,4 @@ Dancer.prototype.setPosition = function (top, left) {
   this.$node.css(styleSettings);
 };
 
-Dancer.setPosition(top, left);
+//var dancer = new Dancer (top, left, timeBetweenSteps);
