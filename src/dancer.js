@@ -30,3 +30,33 @@ var makeDancer = function(top, left, timeBetweenSteps) {
 
   return dancer;
 };
+
+/*
+create a dancer class first
+- node property inside
+
+then create 2 methods :
+  set position
+  step
+*/
+
+// var makeDancer = function (top, left, timeBetweenSteps) {
+//   this.$node = $('<span class="dancer"></span>');
+//   // this.step();
+// };
+
+// makeDancer.prototype.step = function () {
+//   setTimeout(this.step, timeBetweenSteps);
+//  };
+
+// this.step();
+
+// makeDancer.prototype.setPosition = function (top, left) {
+//   var styleSettings = {
+//     top: top,
+//     left: left
+//   };
+//   this.$node.css(styleSettings);
+// };
+
+// makeDancer.setPosition(top, left);
