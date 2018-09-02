@@ -19,11 +19,22 @@
 // };
 
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this);
-  var oldStep = this.step;
+
+  makeDancer.call(this, top, left, timeBetweenSteps);
+  //makeBlinkyDancer.step = makeDancer.step;
+//  this.oldStep = this.step;
+//   console.log(this.step);
+// var oldStep = this.step;
+
+ // var oldDancer = new makeDancer(top, left, timeBetweenSteps);
+  //this.oldStep = makeBlinkyDancer.step;
 };
 
+makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);
+makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+
 makeBlinkyDancer.prototype.step = function() {
-  oldStep();
+  //this.oldStep();
+  // console.log(this.step);
   this.$node.toggle();
 };

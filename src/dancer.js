@@ -42,17 +42,16 @@ then create 2 methods :
 
 var makeDancer = function (top, left, timeBetweenSteps) {
   this.$node = $('<span class="dancer"></span>');
-  this.position = 0;
-  this.timeBetweenSteps = timeBetweenSteps;
+  this.time = timeBetweenSteps;
+  this.step();
+  this.setPosition(top, left);
 };
 
 makeDancer.prototype.constructor = makeDancer;
 
 makeDancer.prototype.step = function () {
-   setTimeout(this.step.bind(this), this.timeBetweenSteps);
+  setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
-
-makeDancer.step();
 
 makeDancer.prototype.setPosition = function (top, left) {
   var styleSettings = {
