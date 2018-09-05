@@ -35,6 +35,9 @@ body, a:link, a:visited, a:active{
   border:10px solid blue;
   position:absolute;
 }
+.rick{
+  font-size: 18px;
+}
 /* .background-image{
   background-image: linear-gradient(red, yellow);
 } */

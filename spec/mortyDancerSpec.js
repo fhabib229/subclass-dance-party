@@ -12,10 +12,21 @@ describe('MortyDancer', function() {
     expect(mortyDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(mortyDancer.$node, 'toggle');
+  it('should have a step function that makes its node slide down', function() {
+    sinon.spy(mortyDancer.$node, 'slideDown');
     mortyDancer.step();
-    expect(mortyDancer.$node.toggle.called).to.be.true;
+    expect(mortyDancer.$node.slideDown.called).to.be.true;
+  });
+
+  it('should have a styleSettings property that\'s defined as an object', function() {
+    expect(typeof mortyDancer.styleSettings).to.be.equal('object');
+  });
+
+  it('should call lineUp at least once', function() {
+    sinon.spy(mortyDancer, 'lineUp');
+    expect(mortyDancer.lineUp.callCount).to.be.equal(0);
+    mortyDancer.lineUp();
+    expect(mortyDancer.lineUp.callCount).to.be.equal(1);
   });
 
   describe('dance', function() {

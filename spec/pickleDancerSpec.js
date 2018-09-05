@@ -12,10 +12,21 @@ describe('DancingPickle', function() {
     expect(pickleDancer.$node).to.be.an.instanceof(jQuery);
   });
 
-  it('should have a step function that makes its node blink', function() {
-    sinon.spy(pickleDancer.$node, 'toggle');
+  it('should have a step function that makes its node slide down', function() {
+    sinon.spy(pickleDancer.$node, 'slideDown');
     pickleDancer.step();
-    expect(pickleDancer.$node.toggle.called).to.be.true;
+    expect(pickleDancer.$node.slideDown.called).to.be.true;
+  });
+
+  it('should have a styleSettings property that\'s defined as an object', function() {
+    expect(typeof pickleDancer.styleSettings).to.be.equal('object');
+  });
+
+  it('should call lineUp at least once', function() {
+    sinon.spy(pickleDancer, 'lineUp');
+    expect(pickleDancer.lineUp.callCount).to.be.equal(0);
+    pickleDancer.lineUp();
+    expect(pickleDancer.lineUp.callCount).to.be.equal(1);
   });
 
   describe('dance', function() {

@@ -18,6 +18,17 @@ describe('blinkyDancer', function() {
     expect(blinkyDancer.$node.toggle.called).to.be.true;
   });
 
+  it('should have a styleSettings property that\'s defined as an object', function() {
+    expect(typeof blinkyDancer.styleSettings).to.be.equal('object');
+  });
+
+  it('should call lineUp at least once', function() {
+    sinon.spy(blinkyDancer, 'lineUp');
+    expect(blinkyDancer.lineUp.callCount).to.be.equal(0);
+    blinkyDancer.lineUp();
+    expect(blinkyDancer.lineUp.callCount).to.be.equal(1);
+  });
+
   describe('dance', function() {
     it('should call step at least once per second', function() {
       sinon.spy(blinkyDancer, 'step');

@@ -15,7 +15,6 @@ MortyDancer.prototype.constructor = MortyDancer;
 MortyDancer.prototype.step = function() {
   Dancer.prototype.step.call(this);
   this.$node.slideDown();
-  this.$node.mouseover();
 };
 
 MortyDancer.prototype.lineUp = function(top, left) {

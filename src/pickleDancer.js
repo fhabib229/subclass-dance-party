@@ -15,7 +15,14 @@ DancingPickle.prototype.constructor = DancingPickle;
 
 DancingPickle.prototype.step = function () {
   Dancer.prototype.step.call(this);
-  this.$node.slideUp();
+  this.$node.slideDown();
+  this.$node.mouseover(function(event) {
+    createTooltip(event);
+  });
+
+  var createTooltip = function(event) {
+    $('<div class="rick">I\'m PICKLE RICK</div>').appendTo('body');
+  };
 };
 
 DancingPickle.prototype.lineUp = function(top, left) {
