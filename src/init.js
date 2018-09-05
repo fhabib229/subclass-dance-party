@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  window.dancers = [];
+  window.pickles = [];
+  window.mortys = [];
 
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
@@ -28,18 +29,30 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
-    window.dancers.push(dancer);
+    if (dancer.tag === 'rick') {
+      window.pickles.push(dancer);
+    } else {
+      window.mortys.push(dancer);
+    }
   });
 
 
   $('.lineButton').on('click', function (event) {
-    $(window.dancers).each( function(index ) {
+    $(window.pickles).each(function( index ) {
       if (index === 0) {
-        console.log(window.dancers[index]);
+        this.lineUp(500, 0);
+      } else {
+        var prev = window.pickles[index - 1].styleSettings.left;
+        var newPrev = prev + 150;
+        this.lineUp(500, newPrev);
+      }
+    });
+
+    $(window.mortys).each(function( index ) {
+      if (index === 0) {
         this.lineUp(300, 0);
       } else {
-        console.log(window.dancers[index]);
-        var prev = window.dancers[index - 1].styleSettings.left;
+        var prev = window.mortys[index - 1].styleSettings.left;
         var newPrev = prev + 150;
         this.lineUp(300, newPrev);
       }
