@@ -28,6 +28,22 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+    window.dancers.push(dancer);
+  });
+
+
+  $('.lineButton').on('click', function (event) {
+    $(window.dancers).each( function(index ) {
+      if (index === 0) {
+        console.log(window.dancers[index]);
+        this.lineUp(300, 0);
+      } else {
+        console.log(window.dancers[index]);
+        var prev = window.dancers[index - 1].styleSettings.left;
+        var newPrev = prev + 150;
+        this.lineUp(300, newPrev);
+      }
+    });
   });
 });
 
