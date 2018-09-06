@@ -5,21 +5,24 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
-  background-image: linear-gradient(red, yellow);
+  background-image: url("img/wp1822725.png");
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: lightgreen;
+  padding:5px 12px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .title, .addDancerButton{
   padding:5px 12px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   float:right;
 }
 .topbar{
-  height:32px;
-  background-color: #555;
+  height:36px;
+  background-color: grey;
 }
 .title{
-  background-color: #777;
+  background-color: grey;
 }
 .dancer{
   border:10px solid red;
@@ -27,12 +30,11 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .morty{
-  border:10px solid green;
   border-radius:10px;
   position:absolute;
 }
 .pickle{
-  border:10px solid blue;
+  border-radius:10px;
   position:absolute;
 }
 .rick{
